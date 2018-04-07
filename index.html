@@ -9,13 +9,6 @@
       <body>
         <!-- Include the library in the page -->
         <script src="https://unpkg.com/vue/dist/vue.js"></script>
-<!-- 
-(1)
-import the marked library; 
-at this point you can test it in the console with:
-  const html = marked('__bold__');
-console.log(html); // outputs: <p><strong>bold</strong></p>
--->
         <script src="https://unpkg.com/marked"></script>
 
         <!-- Notebook app -->
@@ -23,24 +16,7 @@ console.log(html); // outputs: <p><strong>bold</strong></p>
 
           <!-- Main pane -->
           <section class="main">
-<!--
-(2)
-Now let's add the text editor. We will use a simple textarea element and 
-the V-MODEL directive. 
-Put the TEXTAREA inside the section element, then add the V-MODEL directive bound 
-to our CONTENT property:
--->
             <textarea v-model="content"></textarea>
-<!--
-(2)
-Now, if you change the text inside the note editor, the value of CONTENT
-should automatically change in the devtools. 
--->
-<!--
-(3)
-NOTE: the V-MODEL directive is not limited to text inputs. You can also use it in other
-from elements, such as checkboxes, radio buttons, or even custom components.
--->
           </section>
 
         </div>

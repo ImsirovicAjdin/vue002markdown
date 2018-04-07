@@ -18,9 +18,31 @@
           <section class="main">
             <textarea v-model="content"></textarea>
           </section>
-
-          <aside class="preview">
+            <!-- 
+            (1) Now that we know that text interpolation can't render HTML for security reasons, 
+            we'll render dynamic HTML with the V-HTML directive. Like the V-MODEL, this one is a 
+            special attribute that adds a new feature to our template: it RENDERS any VALID HTML STRING
+            into our app. Just pass the string as the value:
+            -->
+          <aside class="preview" v-html="notePreview">
+            <!--
+            (2)
+            It is not recommended to use V-HTML on content created by the users of the application. 
+            They could write malicious JavaScript code inside a <script> tag that would be executed.
+            However, with normal text interpolation, you're safe because the HTML tags are escaped.
+            -->
+            <!-- 
+            (3) Note that we have removed the previous text interpolation of notePreview:
             {{ notePreview }}
+            -->
+            <!-- 
+            (4) Note: Any content inside our aside element will be replaced by the value of the V-HTML 
+            directive. You can use this to put placeholder contents inside.
+            -->
+            <!-- 
+            (5) Note: There is an equivalent directive for text interpolation, V-TEXT, which behaves
+            like V-HTML, but escapes the HTML tags just like classic text interpolations.
+            -->
           </aside>
           
         </div>

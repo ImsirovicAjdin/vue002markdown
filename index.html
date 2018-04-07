@@ -19,26 +19,10 @@
             <textarea v-model="content"></textarea>
           </section>
 
-          <!-- 
-          (2)
-          Let's try to display our note in a new pane using text interpolation.
-          -->
           <aside class="preview">
             {{ notePreview }}
           </aside>
-          <!--
-          (3)
-          Test this improvement by typing: 
-          I'm in __bold__
-          -->
-          <!-- 
-          (4)
-          We got back: <p>I&#39;m in <strong>bold</strong></p> 
-          This means that TEXT INTERPOLATION ESCAPES HTML TAGS.
-          This is to prevent XSS attacks.
-          If sb writes in your website's comments section, what can happen if they are
-          allowed to display their comments as valid HTML? They could add some malicious JS code,
-          and all the visitors of your app would be vulnerable.
+          
         </div>
 
         <!-- Some JavaScript -->

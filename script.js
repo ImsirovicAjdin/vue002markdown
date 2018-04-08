@@ -13,10 +13,9 @@ new Vue({
   },
   watch: {
     // Watching 'content' data property 
-    content: {
-      handler (val, oldVal) {
-        console.log('new note:', val, 'old note:', oldVal);
-      },
+    // shorter syntax can skip the handler option:
+    content (val, oldVal) {
+      console.log('new note:', val, 'old note:', oldVal)
     },
   },
 })

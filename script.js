@@ -2,7 +2,12 @@ new Vue({
   el: '#notebook',
   data () {
     return {
-      content: 'This is a note. You can type in here.',
+      // INITIALIZING DIRECTLY IN THE DATA:
+      // The other way to display the saved localStorage is to initialize the CONTENT data
+      // property with the restored value directly:
+      content: localStorage.getItem('content') || 'You can write in **markdown**',
+      // With the preceding code, the watcher hander will not be called because we initialize
+      // the content value instead of changing it
     }
   },
   computed: {
@@ -22,8 +27,5 @@ new Vue({
     reportOperation (opName) {
       console.log('The', opName, 'operation was completed!');
     },
-  },
-  created () {
-    this.content = localStorage.getItem('content') || 'You can write in **markdown**'
   },
 })

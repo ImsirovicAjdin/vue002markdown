@@ -23,6 +23,7 @@ new Vue({
       console.log('The', opName, 'operation was completed!');
     },
   },
-  printToConsole:   
-    console.log('restored note:', localStorage.getItem('content')),
+  created () {
+    this.content = localStorage.getItem('content') || 'You can write in **markdown**'
+  },
 })

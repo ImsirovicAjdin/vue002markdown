@@ -24,8 +24,5 @@ new Vue({
     },
   },
   printToConsole:   
-    // (1) LOADING the saved note: 
-    // Now that we save the note content each time it changes, we will need to restore it when
-    // the app is reopened. We will use the localStorage.getItem() API for that:
     console.log('restored note:', localStorage.getItem('content')),
 })

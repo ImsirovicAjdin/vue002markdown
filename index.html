@@ -26,7 +26,16 @@
               <!-- <button @click="addNote"><i class="material-icons">add</i> Add note</button> -->
               <!-- <button v-bind:title="notes.length + ' note(s) already'"> -->
               <!-- The above line can be written in shortcut form: -->
-              <button :title="notes.length + ' note(s) already'">                      
+              <button :title="notes.length + ' note(s) already'">                  
+            </div>
+            <div class="notes">
+              <!-- Note list here -->
+              <!-- <div v-for="item of items">{{ item.title }}</div> -->
+              <!-- <div v-for="item in items">{{ item.title }}</div> -->
+              <!-- 
+              As you can see, the element on which you put the v-for directive is repeated in the DOM.
+              -->
+              <div class="note" v-for="note of notes">{{note.title}}</div>
             </div>
           </aside>
           <section class="main">

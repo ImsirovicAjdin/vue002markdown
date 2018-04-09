@@ -11,9 +11,8 @@ new Vue({
     },
   },
   watch: {
-    content: {
-      handler: 'saveNote',
-    },
+    // alternatively, we can use it with the shorter syntax:
+    content:'saveNote',
   },
   methods: {
     saveNote (val) {

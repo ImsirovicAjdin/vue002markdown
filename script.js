@@ -14,8 +14,6 @@ new Vue({
     content:'saveNote',
   },
   methods: {
-    // INSIDE THE METHODS, we can access the Vue instance with the this keyword. For example, we
-    // could call another method:
     saveNote (val) {
       console.log('saving note', val);
       localStorage.setItem('content', val);

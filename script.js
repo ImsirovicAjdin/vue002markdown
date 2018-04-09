@@ -10,9 +10,19 @@ new Vue({
       return marked(this.content);
     },
   },
+    // (2) We can now use the method name in the handler option of our watcher:
   watch: {
-    content (val, oldVal) {
-      console.log('new note:', val, 'old note:', oldVal);
+    content: {
+      handler: 'saveNote',
+    },
+  },
+  // (1) USING A METHOD
+  // We can write some logic in reusable functions called METHODS.
+  // Let's move our saving logic into one:
+  // Add a new METHODS option to the Vue instance and use the localStorage API there:
+  methods: {
+    saveNote (val) {
+      console.log('saving note', val);
       localStorage.setItem('content', val);
     },
   },

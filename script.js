@@ -7,15 +7,13 @@ new Vue({
   },
   computed: {
     notePreview () {
-      // Markdown rendered to HTML 
       return marked(this.content);
     },
   },
   watch: {
-    // Watching 'content' data property 
-    // shorter syntax can skip the handler option:
     content (val, oldVal) {
-      console.log('new note:', val, 'old note:', oldVal)
+      console.log('new note:', val, 'old note:', oldVal);
+      localStorage.setItem('content', val);
     },
   },
 })

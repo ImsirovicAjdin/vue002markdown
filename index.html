@@ -23,7 +23,10 @@
               <!-- <button v-on:click="callback"><i class="material-icons">add</i> Add note</button> -->
               <!-- <button v-on:click="addNote"><i class="material-icons">add</i> Add note</button> -->
               <!-- The above line can be written in shortcut form: -->
-              <button @click="addNote"><i class="material-icons">add</i> Add note</button>
+              <!-- <button @click="addNote"><i class="material-icons">add</i> Add note</button> -->
+              <!-- <button v-bind:title="notes.length + ' note(s) already'"> -->
+              <!-- The above line can be written in shortcut form: -->
+              <button :title="notes.length + ' note(s) already'">                      
             </div>
           </aside>
           <section class="main">

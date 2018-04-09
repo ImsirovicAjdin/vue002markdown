@@ -11,13 +11,18 @@ new Vue({
     },
   },
   watch: {
-    // alternatively, we can use it with the shorter syntax:
     content:'saveNote',
   },
   methods: {
+    // INSIDE THE METHODS, we can access the Vue instance with the this keyword. For example, we
+    // could call another method:
     saveNote (val) {
       console.log('saving note', val);
       localStorage.setItem('content', val);
+      this.reportOperation('saving');
     },
+    reportOperation (opName) {
+      console.log('The', opName, 'operation was completed!');
+    }
   },
 })

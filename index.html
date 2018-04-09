@@ -35,7 +35,7 @@
               <!-- 
               As you can see, the element on which you put the v-for directive is repeated in the DOM.
               -->
-              <div class="note" v-for="note of notes">{{note.title}}</div>
+              <div class="note" v-for="note of notes" @click="selectNote(note)">{{note.title}}</div>
             </div>
           </aside>
           <section class="main">

@@ -3,8 +3,12 @@ new Vue({
   data () {
     return {
       content: localStorage.getItem('content') || 'You can write in **markdown**',
-      // NEW! A NOTE ARRAY:
       notes: [],
+      // Selectin a note: When a note is selected, it becomes the context of the middle
+      // and right panes of the app -- the text editor modifies its content, and the 
+      // preview pane displays its formatted markdown. Let's implement this behavior:
+      // (1) Id of the selected note:
+      selectedId: null,
     }
   },
   computed: {
@@ -37,6 +41,11 @@ new Vue({
       }
       // Add to the list
       this.notes.push(note)
+    },
+    // (2) We need a new method that will be called when we click on a note in the list to 
+    // select ID. Let's call it selectNote:
+    selectNote (note) {
+      this.selectedId = note.id
     },
   },
 })
